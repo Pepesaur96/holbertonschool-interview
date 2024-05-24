@@ -13,7 +13,7 @@ heap_t *heapify_up(heap_t *node)
 int temp;
 
 while (node->parent && node->n > node->parent->n)
-    {
+{
 temp = node->n;
 node->n = node->parent->n;
 node->parent->n = temp;
