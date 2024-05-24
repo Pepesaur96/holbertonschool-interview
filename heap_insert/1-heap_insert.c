@@ -92,5 +92,5 @@ new_node = insert_at_end(*root, value);
 if (new_node == NULL)
 return (NULL);
 
-rturn (heapify_up(new_node));
+return (heapify_up(new_node));
 }
