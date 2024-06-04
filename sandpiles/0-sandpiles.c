@@ -1,7 +1,11 @@
+#include "sandpiles.h"
 #include <stdio.h>
 
-void print_grid(int grid[3][3]);
-
+/**
+ * sandpiles_sum - computes the sum of two sandpiles
+ * @grid1: first grid
+ * @grid2: second grid
+ */
 void sandpiles_sum(int grid1[3][3], int grid2[3][3])
 {
     int i, j, unstable = 0;
@@ -52,21 +56,5 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
             for (j = 0; j < 3; j++)
                 if (grid1[i][j] > 3)
                     unstable = 1;
-    }
-}
-
-void print_grid(int grid[3][3])
-{
-    int i, j;
-
-    for (i = 0; i < 3; i++)
-    {
-        for (j = 0; j < 3; j++)
-        {
-            if (j)
-                printf(" ");
-            printf("%d", grid[i][j]);
-        }
-        printf("\n");
     }
 }
