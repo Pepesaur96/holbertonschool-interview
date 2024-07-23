@@ -1,11 +1,14 @@
-#ifndef slide_line_h
-#define slide_line_h
-#include <stdio.h>
-/*macros*/
-#define SLIDE_LEFT 0
-#define SLIDE_RIGHT 1
-/*Fucntions Signatures*/
-int slide_line(int *line, size_t size, int direction);
-void slide_and_combine(int * line, size_t size, int direction);
+#ifndef SLIDE_LINE_H
+#define SLIDE_LINE_H
 
-#endif
+#define SLIDE_LEFT 2
+#define SLIDE_RIGHT 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int slide_line(int *line, size_t size, int direction);
+int to_left(int *line, size_t size);
+int to_right(int *line, size_t size);
+
+#endif /* SLIDE_LINE_H */
