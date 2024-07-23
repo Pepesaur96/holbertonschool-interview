@@ -1,38 +1,33 @@
-#include <stdio.h>
-#include <math.h>
+#include "menger.h"
+/**
+ * menger - function that draws a 2D Menger Sponge
+ * @level: level of the menger sponge to draw
+ */
 
-void draw_menger(int level, int size);
-int is_filled(int x, int y);
+void menger(int level)
+{
+	int n, m, j, x, y;
+	char s;
 
-void menger(int level) {
-    if (level < 0) {
-        return;
-    }
-
-    int size = pow(3, level);
-    draw_menger(level, size);
-}
-
-void draw_menger(int level, int size) {
-    for (int y = 0; y < size; y++) {
-        for (int x = 0; x < size; x++) {
-            if (is_filled(x, y)) {
-                putchar('#');
-            } else {
-                putchar(' ');
-            }
-        }
-        putchar('\n');
-    }
-}
-
-int is_filled(int x, int y) {
-    while (x > 0 || y > 0) {
-        if (x % 3 == 1 && y % 3 == 1) {
-            return 0;
-        }
-        x /= 3;
-        y /= 3;
-    }
-    return 1;
+	m = pow(3, level);
+	for (n = 0; n < m; n++)
+	{
+		for (j = 0; j < m;)
+		{
+			s = '#';
+			x = n;
+			y = j++;
+			while (x > 0 || y > 0)
+			{
+				if (x % 3 == 1 && y % 3 == 1)
+				{
+					s = ' ';
+				}
+				x /= 3;
+				y /= 3;
+			}
+			printf("%c", s);
+		}
+		printf("\n");
+	}
 }
